@@ -1,0 +1,137 @@
+
+body {
+
+  background: url("dartbg.png") repeat;
+  color: white;
+  
+  text-align: center;
+  font-family: tahoma;
+  font-size: 18px;
+  
+  overflow: hidden;
+  
+
+  /* Prevent selecting text */  
+  -webkit-touch-callout:none; -webkit-user-select:none;
+  -khtml-user-select:none; -moz-user-select:none;
+  -ms-user-select:none; user-select:none;
+
+}
+
+
+/* The div/pic to click (dartboard pic) */
+
+#clickMeDiv {
+
+  position: absolute;
+  display: none;
+  
+  left: 100px;
+  top: 100px;
+  width: 49px;
+  height: 49px;
+  
+  background: url("dartboard49x49.png");
+
+}
+
+
+/* The span element displaying the score and counting of clicks */
+
+#score {
+
+  position: relative;
+  top: 10px;
+  
+  color: rgb( 255, 235, 233 );
+  text-shadow: 0px 0px 4px black;
+  
+  cursor: default;
+
+}
+
+
+/* Div containers for showing game over, rules of the game and error messages */ 
+
+#gameOverDiv, #rulesDiv, #errorDiv {
+
+  /* The combination of position, left/top and margins centers the elements on the screen.
+     Margin left should be half of width + padding left + padding right and
+     margin top in the same way (height + padding) / 2.
+  */
+
+  position: absolute;
+  display: none;
+  
+  left: 50%;
+  top: 50%;
+  
+  width: 260px;
+  height: 180px;
+  
+  margin-left: -140px;
+  margin-top: -100px;
+  
+  border: 0px;
+  padding: 10px;
+  
+  background: silver;
+  color: rgb( 245, 45, 23 );
+  
+  box-shadow: 0px 0px 8px black;
+  
+  text-align: left;
+
+}
+
+#rulesDiv, #errorDiv {
+
+  font-size: 14px;
+  color: black;
+
+}
+
+#closeRulesBut, #closeGameOverBut, #closeErrorBut {
+
+  float: right;
+}
+
+#startBut, #rulesBut, #endBut {
+
+  width: 52px;
+  height: 22px;
+  
+  border: 0px;
+  cursor: pointer;
+}
+
+#startBut {
+
+  background: url("startBut52x22.png");
+}
+
+#rulesBut {
+
+  background: url("rulesBut52x22.png");
+}
+
+#endBut {
+
+  background: url("endBut52x22.png");
+}
+
+#closeGameOverBut, #closeRulesBut, #closeErrorBut {
+
+  background: url("close22x22.png");
+  
+  width: 22px;
+  height: 22px;
+    
+  border: 0px;
+  cursor: pointer;
+}
+
+td {
+
+  width: 180px;
+}

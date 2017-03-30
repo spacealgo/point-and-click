@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Point & Click - The big web theory</title>
+
+  <!-- Make mobile devices scale correctly or everything will be really small -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'point_click_game/game.css' %}">
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'point_click_game/game.js' %}"></script>
+
+</head>
+<body>
+
+  <button id="startBut"></button>
+  <button id="rulesBut"></button>
+  <button id="endBut"></button>
+
+  <br>
+  <span id="score"></span>
+
+  <div id="gameOverDiv">
+
+    <button id="closeGameOverBut"></button>
+    <br><br>
+    <div id="gameOverContent">
+      <table>
+        <tr><td>Score:</td><td id="gameOverScore"></td></tr>
+        <tr><td>Time (ms):</td><td id="gameOverTime"></td></tr>
+        <tr><td>Distance (pix):</td><td id="gameOverDistance"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="rulesDiv">
+
+    <button id="closeRulesBut"></button>
+    <h3>Rules</h3>
+    A dartboard is moving from the left edge to the right. You should click in the middle of the
+    dartbord. The faster and more accurate your click is the higher scores you get!
+    If you end the game with End button you can continue the game later.
+
+  </div>
+
+  <div id="errorDiv">
+
+    <button id="closeErrorBut"></button>
+    <h3>Error</h3>
+    <span id="errorMessage"></span>
+
+  </div>
+
+  <div id="clickMeDiv"></div>
+
+</body>
+</html>
