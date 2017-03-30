@@ -1,7 +1,7 @@
 
 body {
 
-  background: url("/dartbg.png") repeat;
+  background: url("dartbg.png") repeat;
   color: white;
   
   text-align: center;
@@ -31,7 +31,7 @@ body {
   width: 49px;
   height: 49px;
   
-  background: url("/dartboard49x49.png");
+  background: url("dartboard49x49.png");
 
 }
 
@@ -107,22 +107,22 @@ body {
 
 #startBut {
 
-  background: url("/startBut52x22.png");
+  background: url("startBut52x22.png");
 }
 
 #rulesBut {
 
-  background: url("/rulesBut52x22.png");
+  background: url("rulesBut52x22.png");
 }
 
 #endBut {
 
-  background: url("/endBut52x22.png");
+  background: url("endBut52x22.png");
 }
 
 #closeGameOverBut, #closeRulesBut, #closeErrorBut {
 
-  background: url("/close22x22.png");
+  background: url("close22x22.png");
   
   width: 22px;
   height: 22px;
