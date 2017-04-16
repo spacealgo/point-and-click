@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,10 @@
   <!-- Make mobile devices scale correctly or everything will be really small -->
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <link rel="stylesheet" type="text/css" href="game.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'point_click_game/game.css' %}">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="{% static 'point_click_game/game.js' %}"></script>
 
 </head>
 <body>
@@ -18,6 +19,7 @@
   <button id="startBut"></button>
   <button id="rulesBut"></button>
   <button id="endBut"></button>
+  <button id="loadBut"></button>
 
   <br>
   <span id="score"></span>
@@ -41,7 +43,9 @@
     <h3>Rules</h3>
     A dartboard is moving from the left edge to the right. You should click in the middle of the
     dartbord. The faster and more accurate your click is the higher scores you get!
-    If you end the game with End button you can continue the game later.
+    If you end the game with End button you can continue the game later. You can start a new game
+    with the Start button while the current game is on. If you don't want to continue a saved game
+    just click the Start button twice.
 
   </div>
 

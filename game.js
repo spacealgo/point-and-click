@@ -50,13 +50,6 @@ var message =  {
 window.parent.postMessage( message, "*" ); // Request the game store to set the game's resolution
 
 
-var messageLoad = {
-  messageType: "LOAD_REQUEST"
-};
-
-window.parent.postMessage( messageLoad, "*" ); // Request the game store to load the saved game state
-
-
 
 var score = 0; // The score
 
@@ -318,6 +311,19 @@ $("#endBut").click( function () {
 });
 
 
+// Load the saved game state when Load button has been clicked
+
+$("#loadBut").click( function () {
+
+  var messageLoad = {
+    messageType: "LOAD_REQUEST"
+  };
+
+  window.parent.postMessage( messageLoad, "*" ); // Request the game store to load the saved game state
+
+});
+
+
 
 // Save the game state at store
 
@@ -379,7 +385,7 @@ var endPointX = 0; // The end x coordinate for the dartboard pic (right edge of 
 var endPointY = 0; // The end y coordinate for the dartboard pic (right edge of the game)
 
 var movedFactor = 0; // The fraction where the dartboard pic is on the linear move
-var moveSpeed = 0.015; // How much the movedFactor is changed for each move (frame)
+var moveSpeed = 0; // How much the movedFactor is changed for each move (frame). Define the value in moveClickMeDiv function.
 
 
 // Moves the div/pic on the screen
@@ -388,6 +394,8 @@ function moveClickMeDiv() {
 
   var width = $(document).width(); // The width of the document
   var height = $(document).height(); // The height of the document
+
+  moveSpeed = 0.015 * 300 / width; // Make the speed the same regardles of the width of the game
 
   movedFactor += moveSpeed;
 
