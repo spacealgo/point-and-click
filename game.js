@@ -320,6 +320,8 @@ $("#loadBut").click( function () {
   };
 
   window.parent.postMessage( messageLoad, "*" ); // Request the game store to load the saved game state
+  
+  $("#clickMeDiv").css( "display", "none" ); // Hide the dartboard pic that should be clicked in the game
 
 });
 
