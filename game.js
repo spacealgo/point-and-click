@@ -186,7 +186,7 @@ function isGameOver() {
 
     window.parent.postMessage( msg, "*" ); // Send the score to the game store
 
-    saveGame();
+    //saveGame();
 
   } else { // The game continues
 
