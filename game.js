@@ -346,6 +346,7 @@ function saveGame() {
   aveDistSaved = 0;
   aveTimeSaved = 0;
   
+  count = 0; // Makes displayScore show nothing
   displayScore( 0 );
 }
 
