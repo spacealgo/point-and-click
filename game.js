@@ -345,6 +345,8 @@ function saveGame() {
   scoreSaved = 0;
   aveDistSaved = 0;
   aveTimeSaved = 0;
+  
+  displayScore( 0 );
 }
 
 
