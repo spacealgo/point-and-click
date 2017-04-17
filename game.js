@@ -214,10 +214,8 @@ function displayScore( score ) {
   $("#score").html( showScore ); // Set the score to the score span element (show score on screen)
 }
 
-
-// Start game button was clicked so let's start the game
-
-$("#startBut").click( function () {
+  
+function clearTimers() {
 
   if ( timer ) {
 
@@ -228,6 +226,14 @@ $("#startBut").click( function () {
 
     clearTimeout( timerMove );
   }
+  
+}
+
+// Start game button was clicked so let's start the game
+
+$("#startBut").click( function () {
+
+  clearTimers();
 
   initGame();
 
@@ -287,15 +293,7 @@ $("#closeErrorBut").click( function () {
 
 $("#endBut").click( function () {
 
-  if ( timer ) {
-
-    clearTimeout( timer );
-  }
-
-  if ( timerMove ) {
-
-    clearTimeout( timerMove );
-  }
+  clearTimers();
 
   $("#clickMeDiv").css( "display", "none" ); // Hide the pic
 
@@ -314,14 +312,15 @@ $("#endBut").click( function () {
 // Load the saved game state when Load button has been clicked
 
 $("#loadBut").click( function () {
+  
+  clearTimers();
+  $("#clickMeDiv").css( "display", "none" ); // Hide the dartboard pic that should be clicked in the game
 
   var messageLoad = {
     messageType: "LOAD_REQUEST"
   };
 
   window.parent.postMessage( messageLoad, "*" ); // Request the game store to load the saved game state
-  
-  $("#clickMeDiv").css( "display", "none" ); // Hide the dartboard pic that should be clicked in the game
 
 });
 
