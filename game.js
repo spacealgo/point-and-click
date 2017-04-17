@@ -78,7 +78,7 @@ function initGame() {
 
   $("#clickMeDiv").css( "display", "none" ); // Hide the dartboard pic that should be clicked in the game
 
-  if ( gameIsOn || countSaved >= maxClicks ) { // The game on or it was finnish last time so start a new game
+  if ( gameIsOn || countSaved >= maxClicks ) { // The game is on or it was finished last time so start a new game
 
     count = 0;
     score = 0;
@@ -340,6 +340,11 @@ function saveGame() {
   };
 
   window.parent.postMessage( msg, "*" ); // Post the game's state to the store for saving the state
+  
+  countSaved = 0;
+  scoreSaved = 0;
+  aveDistSaved = 0;
+  aveTimeSaved = 0;
 }
 
 
