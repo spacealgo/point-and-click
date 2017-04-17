@@ -314,6 +314,9 @@ $("#endBut").click( function () {
 $("#loadBut").click( function () {
   
   clearTimers();
+  
+  gameIsOn = false;
+  
   $("#clickMeDiv").css( "display", "none" ); // Hide the dartboard pic that should be clicked in the game
 
   var messageLoad = {
